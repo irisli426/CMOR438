@@ -1,1 +1,1 @@
-Creating a repository for CMOR438 assignments
+This repository contains assignments for CMOR438.
