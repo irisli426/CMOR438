@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my_ml_package"
+version = "0.1.0"
+dependencies = [
+    "numpy",
+    "pandas",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]  # <--- THIS IS THE CRITICAL LINE
