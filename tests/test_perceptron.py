@@ -1,5 +1,5 @@
 import numpy as np
-from my_ml_package.supervised.perceptron import Perceptron
+from src.my_ml_package.supervised.perceptron import Perceptron
 
 def test_perceptron_basic():
     # Simple data: [1, 1] should be class 1, [-1, -1] should be class 0
