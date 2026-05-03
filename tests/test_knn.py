@@ -1,5 +1,5 @@
 import numpy as np
-from src.my_ml_package.supervised.knn import KNearestNeighbors
+from my_ml_package.supervised.knn import KNearestNeighbors
 
 def test_knn_logic():
     """

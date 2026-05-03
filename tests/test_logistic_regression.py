@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from src.my_ml_package.supervised.logistic_regression import LogisticRegression
+from my_ml_package.supervised.logistic_regression import LogisticRegression
 
 def test_logistic_regression_fit():
     # Simple linearly separable data
