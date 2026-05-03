@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from src.my_ml_package.unsupervised.pca import PCA
+from my_ml_package.unsupervised.pca import PCA
 
 def test_pca_dimensions():
     # Create random 10-feature data
