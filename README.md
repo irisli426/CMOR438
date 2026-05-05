@@ -91,7 +91,7 @@ CMOR438/
     ├── test_mlp.py
     ├── test_pca.py
     └── test_perceptron.py
-
+```
 
 ## Algorithms Included
 
@@ -136,6 +136,7 @@ To install the package in editable mode (allowing changes to the source code to 
 git clone <repo_url>
 cd CMOR438
 pip install -e .
+```
 
 ## Testing
 
@@ -145,6 +146,7 @@ Verify the integrity of the models by running the pytest suite from the root dir
 # Set path and run tests
 export PYTHONPATH=$PYTHONPATH:$(pwd)/src
 python3 -m pytest tests/
+```
 
 ## Getting Started
 
