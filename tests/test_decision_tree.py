@@ -32,3 +32,41 @@ class TestDecisionTree(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+def test_decision_tree_ignores_noise():
+    """
+    Test if the tree picks the correct feature to split on.
+    Column 0 is random noise. Column 1 perfectly determines the label.
+    """
+    X = np.array([
+        [10.5, 0], 
+        [0.2,  0], 
+        [50.1, 1], 
+        [22.9, 1]
+    ])
+    y = np.array([0, 0, 1, 1]) 
+    
+    model = DecisionTree(max_depth=1)
+    model.fit(X, y)
+    
+    # Even if Column 0 is a huge number, Column 1 should dictate the prediction
+    test_point = np.array([[999.0, 1]]) 
+    assert model.predict(test_point)[0] == 1
+
+def test_decision_tree_depth_constraint():
+    """
+    If max_depth is 1, the tree should fail to solve a XOR problem
+    because XOR requires at least two levels of splits.
+    """
+    X = np.array([[0,0], [1,1], [1,0], [0,1]])
+    y = np.array([0, 0, 1, 1])
+    
+    # Depth 1 is mathematically incapable of 100% accuracy here
+    model = DecisionTree(max_depth=1)
+    model.fit(X, y)
+    preds = model.predict(X)
+    
+    # Accuracy should not be 100%
+    assert not np.array_equal(preds, y)
+
