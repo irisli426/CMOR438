@@ -1,18 +1,20 @@
-my_ml_package: End-to-End Machine Learning Framework
-Overview
-my_ml_package is a comprehensive, modular machine learning library designed for educational experimentation and high-performance climate and agricultural data analysis. It provides implementations of supervised and unsupervised learning algorithms, accompanied by interactive demonstrations and a robust testing suite.
+# my_ml_package: End-to-End Machine Learning Framework
 
-Key Features
-Modular Architecture: Separated into supervised and unsupervised modules for ease of use and extensibility.
+## Overview
+**my_ml_package** is a comprehensive, modular machine learning library designed for educational experimentation and high-performance climate and agricultural data analysis. It provides implementations of supervised and unsupervised learning algorithms, accompanied by interactive demonstrations and a robust testing suite.
 
-Interactive Notebooks: Each algorithm includes a dedicated .ipynb demo and localized documentation.
+---
 
-Domain Specificity: Optimized for analyzing environmental datasets (temperature change, emissions, and energy).
+## Key Features
+- **Modular Architecture:** Separated into supervised and unsupervised modules for ease of use and extensibility.  
+- **Interactive Notebooks:** Each algorithm includes a dedicated `.ipynb` demo and localized documentation.  
+- **Domain Specificity:** Optimized for analyzing environmental datasets (temperature change, emissions, and energy).  
+- **Unit Tested:** Full coverage with `pytest` to ensure mathematical reliability and code stability.  
 
-Unit Tested: Full coverage with pytest to ensure mathematical reliability and code stability.
+---
 
-Project Structure
-Plaintext
+## Project Structure
+```plaintext
 CMOR438/
 ├── .gitignore                          # Standard git ignore rules (pycache, etc.)
 ├── LICENSE                             # Project licensing terms
@@ -89,63 +91,64 @@ CMOR438/
     ├── test_mlp.py
     ├── test_pca.py
     └── test_perceptron.py
-Algorithms Included
-Supervised Learning
-Linear Regression: Ordinary Least Squares (OLS) for continuous trend analysis.
 
-Logistic Regression: Probabilistic binary classification using Sigmoid activation.
 
-K-Nearest Neighbors (KNN): Spatial classification based on proximity metrics.
+## Algorithms Included
 
-Decision Trees: Information-gain based recursive partitioning.
+### Supervised Learning
+- **Linear Regression:** Ordinary Least Squares (OLS) for continuous trend analysis.  
+- **Logistic Regression:** Probabilistic binary classification using Sigmoid activation.  
+- **K-Nearest Neighbors (KNN):** Spatial classification based on proximity metrics.  
+- **Decision Trees:** Information-gain based recursive partitioning.  
+- **Ensemble Methods & Random Forest:** Combining multiple weak learners for robust predictions.  
+- **Perceptron:** Fundamental linear classifier for binary datasets.  
+- **Multi-Layer Perceptron (MLP):** Feedforward neural network for complex non-linear patterns.  
 
-Ensemble Methods & Random Forest: Combining multiple weak learners for robust predictions.
+### Unsupervised Learning
+- **K-Means:** Centroid-based clustering for identifying data subgroups.  
+- **DBSCAN:** Density-based clustering for non-linear structures and noise detection.  
+- **PCA (Principal Component Analysis):** Dimensionality reduction and feature visualization.  
 
-Perceptron: Fundamental linear classifier for binary datasets.
+---
 
-Multi-Layer Perceptron (MLP): Feedforward neural network for complex non-linear patterns.
+## Example Datasets
 
-Unsupervised Learning
-K-Means: Centroid-based clustering for identifying data subgroups.
+### Agriculture Data (`agriculture.csv`)
+- **Context:** Regional crop performance metrics.  
+- **Key Features:** `Average_Temperature_C`, `Total_Precipitation_mm`, `CO2_Emissions_MT`, `Soil_Health_Index`  
+- **Primary Targets:** `Crop_Yield_MT_per_HA`, `Adaptation_Strategies`  
 
-DBSCAN: Density-based clustering for non-linear structures and noise detection.
+### Temperature Change (`Environment_Temperature_change_...csv`)
+- **Context:** Historical temperature anomalies (1961–2019).  
+- **Key Metrics:** Monthly and yearly temperature deviations in °C.  
 
-PCA (Principal Component Analysis): Dimensionality reduction and feature visualization.
+### Emissions & Energy
+- **emissions.csv:** Historical GHG tracking including `total_ghg` and `ghg_per_capita`.  
+- **energy.csv:** Global energy shifts covering `Renewable Energy Share (%)` and `Fossil Fuel Dependency (%)`.  
 
-Example Datasets
-Agriculture Data (agriculture.csv)
-Context: Regional crop performance metrics.
+---
 
-Key Features: Average_Temperature_C, Total_Precipitation_mm, CO2_Emissions_MT, Soil_Health_Index.
+## Installation
 
-Primary Targets: Crop_Yield_MT_per_HA and Adaptation_Strategies.
-
-Temperature Change (Environment_Temperature_change_...csv)
-Context: Historical temperature anomalies (1961–2019).
-
-Key Metrics: Monthly and yearly temperature deviations in °C.
-
-Emissions & Energy
-emissions.csv: Historical GHG tracking including total_ghg and ghg_per_capita.
-
-energy.csv: Global energy shifts covering Renewable Energy Share (%) and Fossil Fuel Dependency (%).
-
-Installation
 To install the package in editable mode (allowing changes to the source code to take effect immediately):
 
-Bash
+```bash
 git clone <repo_url>
 cd CMOR438
 pip install -e .
-Testing
+
+## Testing
+
 Verify the integrity of the models by running the pytest suite from the root directory:
 
-Bash
+```bash
 # Set path and run tests
 export PYTHONPATH=$PYTHONPATH:$(pwd)/src
 python3 -m pytest tests/
-Getting Started
-Python
+
+## Getting Started
+
+```python
 from my_ml_package.supervised.knn import KNN
 from my_ml_package.unsupervised.pca import PCA
 import pandas as pd
